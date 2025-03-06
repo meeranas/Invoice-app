@@ -7,12 +7,13 @@ use App\Models\Invoice;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Response;
 use App\Services\Interface\InvoiceServiceInterface;
+use App\Repositories\Interface\InvoiceRepositoryInterface;
 
 class InvoiceService implements InvoiceServiceInterface
 { 
-    protected InvoiceRepository $invoiceRepository;
+    protected InvoiceRepositoryInterface $invoiceRepository;
 
-    public function __construct(InvoiceRepository $invoiceRepository)
+    public function __construct(InvoiceRepositoryInterface $invoiceRepository)
     {
         $this->invoiceRepository = $invoiceRepository;
     }

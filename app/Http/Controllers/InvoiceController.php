@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Services\InvoiceService;
 use App\Models\Invoice;
+use App\Services\Interface\InvoiceServiceInterface;
 
 class InvoiceController extends Controller
 {
-    protected InvoiceService $invoiceService;
+    protected InvoiceServiceInterface $invoiceService;
 
-    public function __construct(InvoiceService $invoiceService)
+    public function __construct(InvoiceServiceInterface $invoiceService)
     {
         $this->invoiceService = $invoiceService;
     }
